@@ -1,16 +1,26 @@
 import React from 'react';
-import {Col, Image} from "react-bootstrap";
-
+import {Col, Card, Image} from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
+import { PRODUCT_ROUTE } from '../utils/consts';
 
 function ProductItem({product}) {
-  return (
-    <div>
-        <Col md={3}>
-            <Image ></Image>
-            <div>{product.name}</div>
-        </Col>
-    </div>
-  )
+    const history = useNavigate();
+
+    return (
+        <div>
+            <Col md={3} className={"mt-3"} onClick={() => history(PRODUCT_ROUTE + '/' + product.id)}>
+                <Card style={{cursor:'pointer', width: 275}} border={"light"}>
+                    <Image width={275} height={160} src={product.img}></Image>
+                    <div className="d-flex justify-content-between align-items-center">
+                        <div className='price-card'>{product.price}</div>
+                        <div className='name-card'>{product.name}</div>
+                        <div className='rating-card'>{product.rating}</div>
+                        <div className='button-card'><button>В корзину</button></div>
+                    </div>               
+                </Card>    
+            </Col>
+        </div>
+    )
 }
 
 export default ProductItem
