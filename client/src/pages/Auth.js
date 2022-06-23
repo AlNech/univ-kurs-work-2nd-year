@@ -1,7 +1,10 @@
 import React from 'react'
+import NavBarAuth from '../components/NavBarAuth'
 
 export default function Auth() {
   return (
-    <div>Auth</div>
+    <div>
+      <NavBarAuth></NavBarAuth>
+    </div>
   )
 }

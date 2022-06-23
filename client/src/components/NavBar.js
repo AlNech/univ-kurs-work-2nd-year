@@ -1,32 +1,23 @@
-import React, {useContext} from 'react';
-import { Context } from '../index';
+import React from 'react'
 import logo from '../img/logo.svg';
+import { observer } from 'mobx-react-lite';
+import Catalog from "./Catalog";
 import nameStore from '../img/nameStore.svg';
 import { SHOP_ROUTE } from '../utils/consts';
-import { observer } from 'mobx-react-lite';
 
-export const NavBar = observer(() => {
-  const {user} = useContext(Context);
+
+const NavBar = () => {
   return (
     <div className='navbar'>
         <div to={SHOP_ROUTE}>
           <div className='navbar-logo'><img src={logo} alt="logo"></img></div>
           <div className='navbar-nameStore'><img src={nameStore} alt="logo"></img></div>
         </div>
-        {user.isAuth ? 
-            <div className='menu'>
-              <button className='menu-admin'>Админ панель</button>
-              <button className='menu-auth'>Войти</button>
-            </div> 
-            :
-            <div className='menu'>
-              <button className='menu-admin' onClick={() => {user.setIsAuth(true)}}>Авторизация</button>
-            </div> 
-        }
-        
-  
-        
-       
-    </div>
+
+        <Catalog></Catalog>
+
+     </div>   
   )
-})
+}
+
+export default NavBar;
