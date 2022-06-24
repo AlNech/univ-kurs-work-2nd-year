@@ -10,6 +10,12 @@ import { useNavigate } from 'react-router-dom';
 const NavBar = () => {
   const {user} = useContext(Context);
   const history = useNavigate();
+
+  const logOut = () => {
+    user.setUser({})
+    user.setIsAuth(false)
+  }
+
   return (
     <div className='navbar'>
         <div to={SHOP_ROUTE}>
@@ -21,7 +27,7 @@ const NavBar = () => {
         {user.isAuth ? 
             <div className='menu'>
               <button className='menu-admin' onClick={() => history(ADMIN_ROUTE)}>Админ панель</button>
-              <button className='menu-auth'>Выйти</button>
+              <button className='menu-auth' onClick={() => logOut()}>Выйти</button>
             </div> 
             :
             <div className='menu'>             
