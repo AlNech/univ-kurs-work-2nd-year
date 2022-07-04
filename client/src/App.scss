@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+$font-stack: 'Rubik', sans-serif;
+$color-header: #414141;
+$main-background: #FBF8EC;
+
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+*{
+    box-sizing: border-box;
+    font-family: $font-stack;
+    font-size: 16px;
+}
+h1{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 150%;
+}
+h2{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+}
+
+
+.wrapper{
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+    
+}
+
+.Navbar{
+    @include flex-row;
+}
+
+.header{
+    width: 100%;
+    background-image: url('./img/bgHeader.jpg');
+
+    .wrapper{
+        .head-info{
+            color: $color-header;
+            @include flex-row; 
+        }
+    }
+}
+
+
+
+.sale-line{
+    background: $main-background;
+}
+

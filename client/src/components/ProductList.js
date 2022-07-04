@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import {Row} from "react-bootstrap";
 import { observer } from 'mobx-react-lite';
 import {Context} from "../index";
 import ProductItem from './ProductItem';
@@ -9,11 +10,11 @@ const ProductList = () => {
 
 
     return (
-        <div>
+        <Row className-="d-flex flex-row">
             {product.products.map(product => {
-                return <ProductItem key = {product.id} product={ product }/>
+                return <ProductItem  key = {product.id} product={ product }/>
             })}
-        </div>
+        </Row>
     )
 }
 
