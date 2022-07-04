@@ -7,7 +7,7 @@ import nameStore from '../img/nameStore.svg';
 import { SHOP_ROUTE, ADMIN_ROUTE } from '../utils/consts';
 import { useNavigate } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = observer(() => {
   const {user} = useContext(Context);
   const history = useNavigate();
 
@@ -36,6 +36,6 @@ const NavBar = () => {
         }
      </div>   
   )
-}
+}) 
 
 export default NavBar;
