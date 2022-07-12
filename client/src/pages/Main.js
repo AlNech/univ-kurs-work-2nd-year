@@ -29,12 +29,45 @@ function Main() {
         <div className="wrapper">
             <h2>Акции</h2>
             <Row>
-              <ProductList ></ProductList>
+              <ProductList></ProductList>
+            </Row>
+        </div>
+     </section>
+
+     <section className="new-line">
+        <div className="wrapper">
+            <h2>Новинки</h2>
+            <Row>
+              <ProductList></ProductList>
             </Row>
         </div>
      </section>
         
-     
+     <section className="special-propose">
+        <div className="wrapper">
+          <h2>Специальные предложения</h2>
+          <Row className="d-flex flex-row">
+            <Col md={6} className="special-propose_box-1" style={ {width: 584, height: 200} }>
+                <div className='special-propose_box-content'>
+                  <h3>Оформите карту «Северяночка»</h3>
+                  <p>И получайте бонусы при покупке в магазинах и на сайте</p>
+                </div>
+                <div className="special-propose_box-img">
+                  
+                </div>
+            </Col>
+            <Col md={6} className="special-propose_box-2" style={ {width: 584, height: 200} }>
+                <div className='special-propose_box-content'>
+                    <h3>Покупайте акционные товары</h3>
+                    <p>И получайте вдвое больше бонусов</p>
+                </div>
+                <div className="special-propose_box-img">
+                  
+                </div>
+            </Col>
+          </Row>
+        </div>
+     </section>
       
       
     </div>
