@@ -3,6 +3,8 @@ import { Image, Row, Col } from 'react-bootstrap'
 import NavBar from '../components/NavBar'
 import ProductList from '../components/ProductList'
 import imgHeader from "../img/imgHeader.png";
+import imgPropose1 from "../img/special-propose-one.svg";
+import imgPropose2 from "../img/special-propose-two.svg";
 
 
 
@@ -47,22 +49,22 @@ function Main() {
         <div className="wrapper">
           <h2>Специальные предложения</h2>
           <Row className="d-flex flex-row">
-            <Col md={6} className="special-propose_box-1" style={ {width: 584, height: 200} }>
+            <Col md={6} className="special-propose_box-1 d-flex flex-row justify-content-between" style={ {width: 584, height: 200} }>
                 <div className='special-propose_box-content'>
                   <h3>Оформите карту «Северяночка»</h3>
-                  <p>И получайте бонусы при покупке в магазинах и на сайте</p>
+                  <p className='special-propose_box-content-text'>И получайте бонусы при покупке в магазинах и на сайте</p>
                 </div>
                 <div className="special-propose_box-img">
-                  
-                </div>
+                  <Image style={ {width: 206, height: 138} } src={imgPropose1}></Image>
+                  </div>
             </Col>
-            <Col md={6} className="special-propose_box-2" style={ {width: 584, height: 200} }>
+            <Col md={6} className="special-propose_box-2 d-flex flex-row" style={ {width: 584, height: 200} }>
                 <div className='special-propose_box-content'>
                     <h3>Покупайте акционные товары</h3>
                     <p>И получайте вдвое больше бонусов</p>
                 </div>
                 <div className="special-propose_box-img">
-                  
+                  <Image src={imgPropose2}></Image>
                 </div>
             </Col>
           </Row>

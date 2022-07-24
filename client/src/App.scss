@@ -61,12 +61,28 @@ section{
     }
 }
 
-.special-propose-box-1{    
+
+
+
+.special-propose_box-1{    
     background: #FCD5BA;
     box-shadow: 0px 8px 16px rgba(202, 147, 96, 0.5);
     border-radius: 4px;
+    .special-propose_box-content{
+        padding: 30px 0px 10px 40px;
+        .special-propose_box-content-text{
+            display:block;
+            padding-right:45px;
+        }
+    }
+        
+    
 }
 
+.special-propose_box-2{
+    background: #E5FFDE;
+    border-radius: 4px;
+}
 
 
 
