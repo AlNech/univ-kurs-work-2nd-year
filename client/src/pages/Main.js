@@ -1,12 +1,12 @@
 import React from 'react'
-import { Image, Row, Col } from 'react-bootstrap'
+import { Image, Row, Col, Nav, Card, CardGroup, Button } from 'react-bootstrap'
 import NavBar from '../components/NavBar'
 import ProductList from '../components/ProductList'
 import imgHeader from "../img/imgHeader.png";
 import imgPropose1 from "../img/special-propose-one.svg";
 import imgPropose2 from "../img/special-propose-two.svg";
-
-
+import map from "../img/map.svg";
+import logo_footer from "../img/logo_footer.svg";
 
 function Main() {
   return (
@@ -49,16 +49,16 @@ function Main() {
         <div className="wrapper">
           <h2>Специальные предложения</h2>
           <Row className="d-flex flex-row">
-            <Col md={6} className="special-propose_box-1 d-flex flex-row justify-content-between" style={ {width: 584, height: 200} }>
+            <Col md={5} className="special-propose_box-1 d-flex flex-row justify-content-between"  >
                 <div className='special-propose_box-content'>
                   <h3>Оформите карту «Северяночка»</h3>
                   <p className='special-propose_box-content-text'>И получайте бонусы при покупке в магазинах и на сайте</p>
                 </div>
                 <div className="special-propose_box-img">
                   <Image style={ {width: 206, height: 138} } src={imgPropose1}></Image>
-                  </div>
+                </div>
             </Col>
-            <Col md={6} className="special-propose_box-2 d-flex flex-row" style={ {width: 584, height: 200} }>
+            <Col md={5} className="special-propose_box-2 d-flex flex-row" >
                 <div className='special-propose_box-content'>
                     <h3>Покупайте акционные товары</h3>
                     <p>И получайте вдвое больше бонусов</p>
@@ -71,7 +71,116 @@ function Main() {
         </div>
      </section>
       
+
+
+
+     <section className="map">
+        <div className="wrapper">
+          <h2>Наши магазины</h2>
+
+          <Nav defaultActiveKey="link-1" as="ul">
+            <Nav.Item as="li">
+              <Nav.Link eventKey="link-1">п.Щельяюр</Nav.Link>
+            </Nav.Item>
+            <Nav.Item as="li">
+              <Nav.Link eventKey="link-2">д.Вертеп</Nav.Link>
+            </Nav.Item>
+            <Nav.Item as="li">
+              <Nav.Link eventKey="link-3">с.Краснобор</Nav.Link>
+            </Nav.Item>
+            <Nav.Item as="li">
+              <Nav.Link eventKey="link-4">д.Диюр</Nav.Link>
+            </Nav.Item>
+          </Nav>
+
+
+
+          <Image src={map}></Image>
+        </div>
+     </section>
       
+
+    <section className="article">
+      <div className="wrapper">
+        <h2>Статьи</h2>
+
+        <CardGroup>
+          <Card>
+            <Card.Img variant="top" src="" />
+            <Card.Body>
+              <small className="text-muted">15.07.2019</small>
+              <Card.Title>Режим использования масок и перчаток на территории магазинов</Card.Title>
+              <Card.Text>
+                Подробная информация о режимах использования масок и перчаток на территории магазинов "ЛЕНТА". Информация обновляется каждый будний день.
+              </Card.Text>
+            </Card.Body>
+            
+              <Button>Подробнее</Button>
+            
+          </Card>
+          <Card>
+            <Card.Img variant="top" src="" />
+            <Card.Body>
+              <small className="text-muted">15.07.2019</small>
+              <Card.Title>Весеннее настроение для каждой</Card.Title>
+              <Card.Text>
+                8 Марта – это не просто Международный женский день, это ещё день тюльпанов, приятных сюрпризов и праздничных тёплых пожеланий.
+              </Card.Text>
+            </Card.Body>
+            
+              <Button>Подробнее</Button>
+            
+          </Card>
+          <Card>
+            <Card.Img variant="top" src="" />
+            <Card.Body>
+              <small className="text-muted">15.07.2019</small>
+              <Card.Title>ЗОЖ или ФАСТФУД. А вы на чьей стороне? Голосуем!</Card.Title>
+              <Card.Text>
+                Голосуйте за любимые категории, выбирайте категорию-победителя в мобильном приложении и получайте кешбэк 10% баллами в апреле!
+              </Card.Text>
+            </Card.Body>
+            
+              <Button>Подробнее</Button>
+            
+          </Card>
+        </CardGroup>
+      </div>
+    </section>
+
+
+    <footer className="footer">
+      <div className="wrapper">
+        <Row className="d-flex flex-row">
+          <Col md={1}>
+            <Image src={logo_footer}></Image>
+          </Col>
+
+          <Col md={7}>
+            <Nav>
+              <Nav.Item>О компании</Nav.Item>
+              <Nav.Item>Контакты</Nav.Item>
+              <Nav.Item>Вакансии</Nav.Item>
+              <Nav.Item>Статьи</Nav.Item>
+              <Nav.Item>Политика обработки персональных данных</Nav.Item>
+            </Nav>
+          </Col>
+
+          <Col md={2}>
+            <Nav>
+              <Nav.Item>d<Image></Image></Nav.Item>
+              <Nav.Item>d<Image></Image></Nav.Item>
+              <Nav.Item>d<Image></Image></Nav.Item>
+              <Nav.Item>d<Image></Image></Nav.Item>
+            </Nav>
+          </Col>
+          <Col md={1}><a href="/">88007773333</a></Col>
+          
+        </Row>
+
+
+      </div>
+    </footer>
     </div>
   )
 }
