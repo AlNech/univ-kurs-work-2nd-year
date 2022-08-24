@@ -30,7 +30,7 @@ import { useNavigate } from 'react-router-dom';
             </div> 
             :
             <div className='menu'>             
-              <button className='menu-auth' onClick={() => {user.setIsAuth(true)}}>Авторизация</button>
+              <button className='menu-auth' onClick={() => {history(LOGIN_ROUTE)}}>Авторизация</button>
             </div> 
         }  
     </div>

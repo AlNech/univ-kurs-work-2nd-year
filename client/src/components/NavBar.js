@@ -4,7 +4,7 @@ import { observer } from 'mobx-react-lite';
 import Catalog from "./Catalog";
 import {Context} from "../index"
 import nameStore from '../img/nameStore.svg';
-import { SHOP_ROUTE, ADMIN_ROUTE } from '../utils/consts';
+import { SHOP_ROUTE, ADMIN_ROUTE, LOGIN_ROUTE } from '../utils/consts';
 import { useNavigate } from 'react-router-dom';
 
 const NavBar = observer(() => {
@@ -31,7 +31,7 @@ const NavBar = observer(() => {
             </div> 
             :
             <div className='menu'>             
-              <button className='menu-auth' onClick={() => {user.setIsAuth(true)}}>Авторизация</button>
+              <button className='menu-auth' onClick={() => {history(LOGIN_ROUTE)}}>Авторизация</button>
             </div> 
         }
      </div>   
