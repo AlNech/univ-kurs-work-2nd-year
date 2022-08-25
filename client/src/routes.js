@@ -25,11 +25,11 @@ export const publicRoutes = [
     },
     {
         path: CATALOG_PRODUCT,
-        Component: CatalogType,
+        Component: CatalogProduct,
     },
     {
         path: CATALOG_TYPE,
-        Component: CatalogProduct,
+        Component: CatalogType,
     },
     {
         path: LOGIN_ROUTE,

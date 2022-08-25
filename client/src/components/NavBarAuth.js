@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import { Context } from '../index';
 import logo from '../img/logo.svg';
 import nameStore from '../img/nameStore.svg';
-import { SHOP_ROUTE, ADMIN_ROUTE} from '../utils/consts';
+import { SHOP_ROUTE, ADMIN_ROUTE, LOGIN_ROUTE} from '../utils/consts';
 import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router-dom';
 
