@@ -24,11 +24,11 @@ const Auth = observer(() => {
             } else {
                 data = await registration(email, password);
             }
-            user.setUser({data});
+            user.setUser(data);
             user.setIsAuth(true);
             history(SHOP_ROUTE);
         } catch (e) {
-            console.log(e);
+            console.log(e.response.data.message);
         }
 
     }

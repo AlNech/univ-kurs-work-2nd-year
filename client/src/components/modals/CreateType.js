@@ -1,8 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Modal, Form, Button} from "react-bootstrap";
-
+import {createType} from "../../http/productApi";
 
 function CreateType({show, onHide}) {
+  const [value, setValue] = useState('')
+
+  const addType = () => {
+    createType({name: value}).then(data => {
+        setValue('')
+        onHide()
+    })
+}
   return (
     <Modal show={show} onHide={onHide}>
 
@@ -12,7 +20,7 @@ function CreateType({show, onHide}) {
 
         <Modal.Body>
           <Form>
-            <Form.Control placeholder="Введите тип">
+            <Form.Control placeholder="Введите тип" onChange={e => setValue(e.target.value)}>
 
             </Form.Control>
           </Form>
@@ -23,7 +31,7 @@ function CreateType({show, onHide}) {
           <Button variant="outline-danger" onClick={onHide}>
             Закрыть
           </Button>
-          <Button variant="outline-success" onClick={onHide}>
+          <Button variant="outline-success" onClick={addType}>
             Добавить
           </Button>
         </Modal.Footer>

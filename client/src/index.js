@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
     <Context.Provider value={{
       user: new UserStore(),
-      product: new ProductStore()
+      product: new ProductStore(),
     }}>
       <App />
     </Context.Provider>

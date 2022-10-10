@@ -3,9 +3,12 @@ import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
+import { ListGroupItem } from 'react-bootstrap';
 
 const TypeBar = observer(() => {
     const {product} = useContext(Context)
+    
+    
     return (
         <ListGroup>
             {product.types.map(type =>
@@ -16,10 +19,12 @@ const TypeBar = observer(() => {
                     key={type.id}
                 >
                     {type.name}
+                    <br/>
                 </ListGroup.Item>
             )}
         </ListGroup>
-    );
+    )
+        
 });
 
 export default TypeBar;
