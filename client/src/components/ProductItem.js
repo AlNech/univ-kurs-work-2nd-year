@@ -7,19 +7,18 @@ function ProductItem({product}) {
     const history = useNavigate();
 
     return (
-        <div className="d-flex col-md-3">
-            <Col onClick={() => history(PRODUCT_ROUTE + '/' + product.id)}>
-                <Card style={{cursor:'pointer', width: 275}} border={"light"}>
-                    <Image width={275} height={160} src={product.img}></Image>
-                    <div className="d-flex flex-column justify-content-between align-items-center">
-                        <div className='price-card'>{product.price}</div>
-                        <div className='name-card'>{product.name}</div>
-                        <div className='rating-card'>{product.rating}</div>
-                        <div className='button-card'><button>В корзину</button></div>
+        
+            <Col md={3} onClick={() => history(PRODUCT_ROUTE + '/' + product.id)}>
+                <Card className="card-product">
+                    <Image className='card-product__img' src={product.img}></Image>
+                    <div className="d-flex flex-column justify-content-between flex-start card-product__box">
+                        <div className='price-card'><h4>{product.price}</h4></div>
+                        <div className='name-card'><p>{product.name}</p></div>
+                        <div className='button-card'><a>В корзину</a></div>
                     </div>               
                 </Card>    
             </Col>
-        </div>
+        
     )
 }
 

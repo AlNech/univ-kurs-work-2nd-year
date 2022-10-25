@@ -15,7 +15,7 @@ $main-background: #FBF8EC;
     box-sizing: border-box;
     font-family: $font-stack;
     font-size: 16px;
-    
+    font-weight: 400;
     line-height: 150%;
 }
 h1{
@@ -34,6 +34,10 @@ h3{
     font-weight: 700;
     font-size: 24px;
 }
+h4{
+    font-weight: 700;
+    font-size: 18px;
+}
 section{
     background: $main-background;
 }
@@ -48,44 +52,194 @@ section{
 .Navbar{
     @include flex-row;
 }
+/*-------------------------------------------------------------------------
+                            PRODUCT LIST COMPONENT
+---------------------------------------------------------------------------*/
+.card-product{ 
+    .card-product__img{
+        width:100%;
+    }  
+    .card-product__box{
+        padding: 0.5em;
+    }
+}
+.price-card{
+    padding-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.name-card{
+    margin-bottom: 1em;
+}
+.button-card{
+    border: 1px solid #70C05B;
+    border-radius: 4px;
+    color: #70C05B;
+    a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+    
+}
+/*------------------------------------------------------------------------
+                            Main page
+-------------------------------------------------------------------------*/
 
+//SECTION HEADER
 .header{
     width: 100%;
     background-image: url('./img/bgHeader.jpg');
 
     .wrapper{
         .head-info{
-            
             @include flex-row; 
-        }
-    }
-}
-
-
-
-
-.special-propose_box-1{    
-    background: #FCD5BA;
-    box-shadow: 0px 8px 16px rgba(202, 147, 96, 0.5);
-    border-radius: 4px;
-    .wrapper{
-        .special-propose_box-content{
-            padding: 30px 0px 10px 40px;
-            .special-propose_box-content-text{
-                display:block;
-                padding-right:45px;
+            .head-info__title{
+                margin-top: 4em;
+                margin-bottom: 4em;
             }
         }
     }
-    
-        
-    
 }
 
-.special-propose_box-2{
-    background: #E5FFDE;
-    border-radius: 4px;
+//SECTION SALE
+.sale-line{
+    .wrapper{
+        .sale-line__title{
+            padding-top: 5em;
+            padding-bottom: 2.5em;
+        }
+    }
+    padding-bottom: 2.5em;
 }
+
+//SECTION NEW PRODUCTS
+.new-line{
+    .wrapper{
+        .new-line__title{
+            padding-top: 5em;
+            padding-bottom: 2.5em;
+        }
+    }
+    padding-bottom: 2.5em;
+}
+
+//SECTION SPECIAL PROPOSE
+.special-propose{
+        
+        .special-propose__title{
+            padding-top: 5em;
+            padding-bottom: 2.5em;
+        }
+
+
+        .special-propose_box-1{    
+            background: #FCD5BA;
+            box-shadow: 0px 8px 16px rgba(202, 147, 96, 0.5);
+            border-radius: 4px;
+            .special-propose_box1-content{
+                padding-left: 2em;
+                margin-right: 1em;
+                padding-top: 2em;  
+                margin-bottom: 0.9em;     
+            }
+            .special-propose_box1-img{
+                width: 206.76px;
+                height: 138.16px;
+                filter: drop-shadow(0px 8px 47px rgba(200, 90, 53, 0.51));
+                border-radius: 10px;
+                margin-right: 5.5em;
+            }
+        
+        }
+
+
+
+
+        .special-propose_box-2{
+            background: #E5FFDE;
+            border-radius: 4px;
+            .special-propose_box2-content{
+                margin-top: 2em;
+                margin-left: 2.3em;
+            }
+            .special-propose_box2-img{
+                margin-left: 4em;
+                margin-right: 3em;
+                margin-top: 0.9em;
+                img{
+                    width: 193px;
+                    height: 186px;
+                }
+                
+            }
+        }
+    padding-bottom: 9em;
+}
+
+//SECTION MAP MARKET
+.map{
+    .wrapper{
+        .map-places{
+            margin-top: 2em;
+            .map-place_cross{
+                padding: 0.5em;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                color: #606060;
+                background: #F3F2F1;
+                border-radius: 4px;
+            }
+            margin-bottom: 1.6em;
+        }
+    }
+    padding-bottom: 9em;
+}
+
+
+.article{
+    .wrapper{
+        .link-article{
+            margin-top: 2.5em;
+            box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            .link-article-card{
+                    position: relative;
+                    background: #fff;
+                    border: 1px solid #000;
+                    .link-article-card_img{
+                        margin-bottom: .7em;
+                    }
+                    .text-muted{
+                        margin-bottom: 1rem;
+                    }
+                    .link-article-card_title{
+                        p{
+                            display: inline-block;
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 150%;
+                            color: #414141;
+                            margin-bottom: 1em;
+                        }
+                    }
+                    .link-article-card_text{
+                        margin-bottom: 1em;
+                    }
+                    .link-article-card_button{
+                        position: relative;
+                        border: 1px solid #000;
+                        bottom: 0em;
+                    }
+            }
+        }
+    }
+}
+
+
+
 
 
 

@@ -17,10 +17,10 @@ function Main() {
           <div className="wrapper">
             <Row > 
                 <div className="head-info">
-                  <Col md={3}>
+                  <Col md={4} className="head-info__img d-flex justify-content-end">
                     <Image src={imgHeader}></Image>
                   </Col>
-                  <Col md={8}><h1>Доставка бесплатно от 1000 ₽</h1></Col>
+                  <Col md={8} className="head-info__title"><h1>Доставка бесплатно от 1000 ₽</h1></Col>
                 </div>
               </Row>
           </div>
@@ -29,41 +29,41 @@ function Main() {
 
      <section className="sale-line">
         <div className="wrapper">
-            <h2>Акции</h2>
+            <div className="sale-line__title"><h2>Акции</h2></div>
             <Row>
-              <ProductList></ProductList>
+              <ProductList style="d-flex flex-row justify-content-between"></ProductList>
             </Row>
         </div>
      </section>
 
      <section className="new-line">
         <div className="wrapper">
-            <h2>Новинки</h2>
+            <div className="new-line__title"><h2>Новинки</h2></div>
             <Row>
-              <ProductList></ProductList>
+              <ProductList ></ProductList>
             </Row>
         </div>
      </section>
         
      <section className="special-propose">
         <div className="wrapper">
-          <h2>Специальные предложения</h2>
-          <Row className="d-flex flex-row">
-            <Col md={5} className="special-propose_box-1 d-flex flex-row justify-content-between"  >
-                <div className='special-propose_box-content'>
+          <div className="special-propose__title"><h2>Специальные предложения</h2></div>
+          <Row className="d-flex flex-row wrapper nowrap justify-content-between ">
+            <Col  className="special-propose_box-1 d-flex flex-row justify-content-between me-md-5"  >           
+                <div className='special-propose_box1-content '>
                   <h3>Оформите карту «Северяночка»</h3>
-                  <p className='special-propose_box-content-text'>И получайте бонусы при покупке в магазинах и на сайте</p>
+                  <p className='special-propose_box1-content-text'>И получайте бонусы при покупке в магазинах и на сайте</p>
                 </div>
-                <div className="special-propose_box-img">
-                  <Image style={ {width: 206, height: 138} } src={imgPropose1}></Image>
+                <div className="special-propose_box1-img">
+                  <Image src={imgPropose1}></Image>
                 </div>
             </Col>
-            <Col md={5} className="special-propose_box-2 d-flex flex-row" >
-                <div className='special-propose_box-content'>
+            <Col className="special-propose_box-2 d-flex flex-row" >
+                <div className='special-propose_box2-content '>
                     <h3>Покупайте акционные товары</h3>
-                    <p>И получайте вдвое больше бонусов</p>
+                    <p className='special-propose_box2-content-text'>И получайте вдвое больше бонусов</p>
                 </div>
-                <div className="special-propose_box-img">
+                <div className="special-propose_box2-img">
                   <Image src={imgPropose2}></Image>
                 </div>
             </Col>
@@ -76,22 +76,23 @@ function Main() {
 
      <section className="map">
         <div className="wrapper">
-          <h2>Наши магазины</h2>
+          <div className='map-title'><h2>Наши магазины</h2></div>
 
-          <Nav defaultActiveKey="link-1" as="ul">
-            <Nav.Item as="li">
-              <Nav.Link eventKey="link-1">п.Щельяюр</Nav.Link>
-            </Nav.Item>
-            <Nav.Item as="li">
-              <Nav.Link eventKey="link-2">д.Вертеп</Nav.Link>
-            </Nav.Item>
-            <Nav.Item as="li">
-              <Nav.Link eventKey="link-3">с.Краснобор</Nav.Link>
-            </Nav.Item>
-            <Nav.Item as="li">
-              <Nav.Link eventKey="link-4">д.Диюр</Nav.Link>
-            </Nav.Item>
-          </Nav>
+          <div  className='col-md-3 map-places d-flex flex-row justify-content-between '>
+            <div className='map-place_cross'>
+              п.Щельяюр
+            </div>
+            <div className='map-place_cross'>
+            д.Вертеп
+            </div>
+            <div className='map-place_cross'>
+            с.Краснобор
+            </div>
+            <div className='map-place_cross'>
+            д.Диюр
+            </div>
+          </div>
+          
 
 
 
@@ -102,49 +103,39 @@ function Main() {
 
     <section className="article">
       <div className="wrapper">
-        <h2>Статьи</h2>
+        <div classNmae='article_title'><h2>Статьи</h2></div>
 
-        <CardGroup>
-          <Card>
-            <Card.Img variant="top" src="" />
-            <Card.Body>
-              <small className="text-muted">15.07.2019</small>
-              <Card.Title>Режим использования масок и перчаток на территории магазинов</Card.Title>
-              <Card.Text>
-                Подробная информация о режимах использования масок и перчаток на территории магазинов "ЛЕНТА". Информация обновляется каждый будний день.
-              </Card.Text>
-            </Card.Body>
-            
-              <Button>Подробнее</Button>
-            
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="" />
-            <Card.Body>
-              <small className="text-muted">15.07.2019</small>
-              <Card.Title>Весеннее настроение для каждой</Card.Title>
-              <Card.Text>
-                8 Марта – это не просто Международный женский день, это ещё день тюльпанов, приятных сюрпризов и праздничных тёплых пожеланий.
-              </Card.Text>
-            </Card.Body>
-            
-              <Button>Подробнее</Button>
-            
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="" />
-            <Card.Body>
-              <small className="text-muted">15.07.2019</small>
-              <Card.Title>ЗОЖ или ФАСТФУД. А вы на чьей стороне? Голосуем!</Card.Title>
-              <Card.Text>
-                Голосуйте за любимые категории, выбирайте категорию-победителя в мобильном приложении и получайте кешбэк 10% баллами в апреле!
-              </Card.Text>
-            </Card.Body>
-            
-              <Button>Подробнее</Button>
-            
-          </Card>
-        </CardGroup>
+
+        <div className="link-article d-flex flex-row justify-content-between ">
+
+          <div className='link-article-card col-md-4 me-md-1 pl-2'>
+            <div className="link-article-card_img"><img></img></div>
+            <small className="text-muted">15.07.2019</small>
+            <div className='link-article-card_title'><p>Режим использования масок и перчаток на территории магазинов</p></div>
+            <div className='link-article-card_text'><p>Подробная информация о режимах использования масок и перчаток на территории магазинов "ЛЕНТА". Информация обновляется каждый будний день.</p></div>
+            <div className='link-article-card_button'><a>Подробнее</a></div>
+          </div>
+          
+         
+          <div className='link-article-card col-md-4 me-md-1 pl-2'>
+            <div className="link-article-card_img"><img></img></div>
+            <small className="text-muted">15.07.2019</small>
+            <div className='link-article-card_title'><p className='col-md-8'>Весеннее настроение для каждой</p></div>
+            <div className='link-article-card_text'><p>8 Марта – это не просто Международный женский день, это ещё день тюльпанов, приятных сюрпризов и праздничных тёплых пожеланий.</p></div>
+            <div className='link-article-card_button'><a>Подробнее</a></div>
+          </div>
+          
+
+
+          <div className='link-article-card col-md-4 pl-2'>
+            <div className="link-article-card_img"><img></img></div>
+            <small className="text-muted">15.07.2019</small>
+            <div className='link-article-card_title'><p>ЗОЖ или ФАСТФУД. А вы на чьей стороне? Голосуем!</p></div>
+            <div className='link-article-card_text'><p>Голосуйте за любимые категории, выбирайте категорию-победителя в мобильном приложении и получайте кешбэк 10% баллами в апреле!</p></div>
+            <div className='link-article-card_button'><a>Подробнее</a></div>
+          </div>
+        </div>
+        
       </div>
     </section>
 
