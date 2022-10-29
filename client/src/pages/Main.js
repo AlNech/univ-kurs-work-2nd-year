@@ -5,6 +5,9 @@ import ProductList from '../components/ProductList'
 import imgHeader from "../img/imgHeader.png";
 import imgPropose1 from "../img/special-propose-one.svg";
 import imgPropose2 from "../img/special-propose-two.svg";
+import article_1 from '../img/articles/article_1.png';
+import article_2 from '../img/articles/article_2.png';
+import article_3 from '../img/articles/article_3.png';
 import map from "../img/map.svg";
 import Footer from '../components/Footer';
 
@@ -93,10 +96,9 @@ function Main() {
             </div>
           </div>
           
+        <Col md={12}><img width='100%' src={map} alt='map'></img></Col>
 
 
-
-          <Image src={map}></Image>
         </div>
      </section>
       
@@ -106,33 +108,44 @@ function Main() {
         <div classNmae='article_title'><h2>Статьи</h2></div>
 
 
-        <div className="link-article d-flex flex-row justify-content-between ">
+        <div className="link-article d-flex flex-row justify-content-between">
 
-          <div className='link-article-card col-md-4 me-md-1 pl-2'>
-            <div className="link-article-card_img"><img></img></div>
+          <div className='link-article-card me-md-3'>
+            <div className="link-article-card_img"><img src={article_1} alt='img_article'></img></div>
             <small className="text-muted">15.07.2019</small>
-            <div className='link-article-card_title'><p>Режим использования масок и перчаток на территории магазинов</p></div>
-            <div className='link-article-card_text'><p>Подробная информация о режимах использования масок и перчаток на территории магазинов "ЛЕНТА". Информация обновляется каждый будний день.</p></div>
-            <div className='link-article-card_button'><a>Подробнее</a></div>
+            <div className='link-article-card_body'>
+              
+              <div className='link-article-card_title'><p>Режим использования масок и перчаток на территории магазинов</p></div>
+              <div className='link-article-card_text'><p>Подробная информация о режимах использования масок и перчаток на территории магазинов "ЛЕНТА". Информация обновляется каждый будний день.</p></div>
+              <div className='link-article-card_button col-md-5'><a>Подробнее</a></div>
+            </div>
           </div>
           
          
-          <div className='link-article-card col-md-4 me-md-1 pl-2'>
-            <div className="link-article-card_img"><img></img></div>
+          <div className='link-article-card me-md-3'>
+            <div className="link-article-card_img"><img src={article_2} alt='img_article'></img></div>
             <small className="text-muted">15.07.2019</small>
-            <div className='link-article-card_title'><p className='col-md-8'>Весеннее настроение для каждой</p></div>
-            <div className='link-article-card_text'><p>8 Марта – это не просто Международный женский день, это ещё день тюльпанов, приятных сюрпризов и праздничных тёплых пожеланий.</p></div>
-            <div className='link-article-card_button'><a>Подробнее</a></div>
+            <div className='link-article-card_body'>
+                
+                <div className='link-article-card_title'><p className='col-md-8'>Весеннее настроение для каждой</p></div>
+                <div className='link-article-card_text'><p>8 Марта – это не просто Международный женский день, это ещё день тюльпанов, приятных сюрпризов и праздничных тёплых пожеланий.</p></div>
+                <div className='link-article-card_button col-md-5'><a>Подробнее</a></div>
+            </div>
+           
           </div>
           
 
 
-          <div className='link-article-card col-md-4 pl-2'>
-            <div className="link-article-card_img"><img></img></div>
+          <div className='link-article-card'>
+            <div className="link-article-card_img"><img src={article_3} art='img_article'></img></div>
             <small className="text-muted">15.07.2019</small>
-            <div className='link-article-card_title'><p>ЗОЖ или ФАСТФУД. А вы на чьей стороне? Голосуем!</p></div>
-            <div className='link-article-card_text'><p>Голосуйте за любимые категории, выбирайте категорию-победителя в мобильном приложении и получайте кешбэк 10% баллами в апреле!</p></div>
-            <div className='link-article-card_button'><a>Подробнее</a></div>
+            <div className='link-article-card_body'>
+              
+              <div className='link-article-card_title'><p>ЗОЖ или ФАСТФУД. А вы на чьей стороне? Голосуем!</p></div>
+              <div className='link-article-card_text'><p>Голосуйте за любимые категории, выбирайте категорию-победителя в мобильном приложении и получайте кешбэк 10% баллами в апреле!</p></div>
+              <div className='link-article-card_button col-md-5'><a>Подробнее</a></div>
+            </div>
+            
           </div>
         </div>
         

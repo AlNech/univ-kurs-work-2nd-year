@@ -18,9 +18,9 @@ const NavBar = observer(() => {
 
   return (
     <div className='navbar'>
-        <div to={SHOP_ROUTE}>
-          <div className='navbar-logo'><img src={logo} alt="logo"></img></div>
+        <div to={SHOP_ROUTE} className='d-flex flex-row col-md-2'>
           <div className='navbar-nameStore'><img src={nameStore} alt="logo"></img></div>
+          <div className='navbar-logo'><img src={logo} alt="logo"></img></div>
         </div>
 
         <Catalog></Catalog>
