@@ -10,7 +10,7 @@ function ProductItem({product}) {
         
             <Col md={3} onClick={() => history(PRODUCT_ROUTE + '/' + product.id)}>
                 <Card className="card-product">
-                    <Image className='card-product__img' src={product.img}></Image>
+                    <Image className='card-product__img' src={process.env.REACT_APP_API_URL + product.img}></Image>
                     <div className="d-flex flex-column justify-content-between flex-start card-product__box">
                         <div className='price-card'><h4>{product.price}</h4></div>
                         <div className='name-card'><p>{product.name}</p></div>

@@ -4,13 +4,9 @@ export default class ProductStore{
     constructor(){
         this._types = [];
         this._brands = [];
-        this._products = [
-            {id:1, name:'Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»', price:550,rating:4.2, img:"https://mosbasa.ru/upload/iblock/82f/82fd495bfcbafbfc8999a670081044f7.jpg"},
-            {id:2, name:'Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»', price:550,rating:4.2, img:"https://mosbasa.ru/upload/iblock/82f/82fd495bfcbafbfc8999a670081044f7.jpg"},
-            {id:3, name:'Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»', price:550,rating:4.2, img:"https://mosbasa.ru/upload/iblock/82f/82fd495bfcbafbfc8999a670081044f7.jpg"},
-            
-        ];
-        this._selectedType = {};
+        this._products = [];
+        this._selectedType = {'id': '', 'name': ''};
+        this._selectedBrand = {'id': '', 'name': ''};
         makeAutoObservable(this);
     }
     setTypes(types) {
@@ -25,7 +21,9 @@ export default class ProductStore{
     setSelectedType(type){
         this._selectedType = type;
     }
-
+    setSelectedBrand(brand) {
+        this._selectedBrand = brand;
+    }
     get types() {
         return this._types;
     }
@@ -37,5 +35,17 @@ export default class ProductStore{
     }
     get selectedType(){
         return this._selectedType;
+    }
+    get selectedBrand() {
+        return this._selectedBrand;
+    }
+    get totalCount() {
+        return this._totalCount;
+    }
+    get page() {
+        return this._page;
+    }
+    get limit() {
+        return this._limit;
     }
 }

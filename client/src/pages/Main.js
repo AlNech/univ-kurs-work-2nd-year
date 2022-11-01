@@ -1,7 +1,6 @@
-import React from 'react'
+import React, {useContext, useEffect} from 'react'
 import { Image, Row, Col, Nav, Card, CardGroup, Button } from 'react-bootstrap'
 import NavBar from '../components/NavBar'
-import ProductList from '../components/ProductList'
 import imgHeader from "../img/imgHeader.png";
 import imgPropose1 from "../img/special-propose-one.svg";
 import imgPropose2 from "../img/special-propose-two.svg";
@@ -10,8 +9,21 @@ import article_2 from '../img/articles/article_2.png';
 import article_3 from '../img/articles/article_3.png';
 import map from "../img/map.svg";
 import Footer from '../components/Footer';
+import ProductListExample from '../components/ProductListExample';
+import { Context } from '..';
+import { fetchTypes, fetchBrands, fetchProduct} from '../http/productApi';
+
 
 function Main() {
+  const {product} = useContext(Context);
+
+  useEffect(() => {
+    fetchTypes().then(data => product.setTypes(data))
+    fetchBrands().then(data => product.setBrands(data))
+    fetchProduct(null, null, 1, 2).then(data => {
+      product.setProduct(data.rows)
+  })
+  }, [])
   return (
     <div>
       <NavBar></NavBar>
@@ -34,7 +46,7 @@ function Main() {
         <div className="wrapper">
             <div className="sale-line__title"><h2>Акции</h2></div>
             <Row>
-              <ProductList style="d-flex flex-row justify-content-between"></ProductList>
+              <ProductListExample style="d-flex flex-row justify-content-between"></ProductListExample>
             </Row>
         </div>
      </section>
@@ -43,7 +55,7 @@ function Main() {
         <div className="wrapper">
             <div className="new-line__title"><h2>Новинки</h2></div>
             <Row>
-              <ProductList ></ProductList>
+              <ProductListExample ></ProductListExample>
             </Row>
         </div>
      </section>

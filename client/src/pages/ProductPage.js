@@ -1,15 +1,20 @@
-import React from 'react'
-import {Card, Col, Image, ListGroup, ListGroupItem} from "react-bootstrap";
+import React, {useState} from 'react'
+import {Card, Col, Image, ListGroup, ListGroupItem, Row} from "react-bootstrap";
 import NavBar from "../components/NavBar";
+import { Context } from '..';
+import { useEffect, useContext } from 'react';
+import {useParams} from 'react-router-dom';
+import {observer} from 'mobx-react-lite';
+import {fetchTypes, fetchOneProduct} from "../http/productApi";
+import TypeBar from '../components/TypeBar';
 
+const ProductPage = observer(() => {
+    const [product, setProduct] = useState({info: []});
+    const {id} = useParams();
 
-function ProductPage() {
-    const product =  {id:1, name:'Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»', price:550,rating:4.2, img:"https://mosbasa.ru/upload/iblock/82f/82fd495bfcbafbfc8999a670081044f7.jpg"}
-    const description = [
-        {id:1,title:"Страна производителя", desription:"Россия"},
-        {id:2,title:"Упаковка", desription:"180г"},       
-    ]
-   
+    useEffect(() => {
+        fetchOneProduct(id).then(data => setProduct(data))
+    }, [])
     return (
         <div>
             <NavBar></NavBar>
@@ -17,23 +22,24 @@ function ProductPage() {
                 {product.name}
             </Col>
             <Col md={5}>
-                <Image width={504} height={496} src={product.img}></Image>
+                <Image width={504} height={496} src={process.env.REACT_APP_API_URL + product.img}></Image>
             </Col>
             <Col md={4}>
                 <div className="price-line">{product.price}</div>
                 <div className="button-basket"><button>В корзину</button></div>
                 <div className="desription">
                     <Card>
-                        
-                        <ListGroup>
-                            {description.map((desc) =>
-                                {return <ListGroupItem>
-                                    <div className="card-description-title">{desc.title}</div>
-                                    <div className="card-description-text">{desc.description}</div>
-                                </ListGroupItem>}
-                            )}
+                    <h1>Характеристики</h1>
+                     
+                                {product.info.map((info, index) =>
+                                    <Row key={info.id} style={{background: index % 2 === 0 ? 'lightgray' : 'transparent', padding: 10}}>
+                                        {info.title}: {info.description}
+                                    </Row>
+                                )}
+                                
+                             
                             
-                        </ListGroup>
+                       
                     </Card>
                 </div>
             </Col>
@@ -41,6 +47,6 @@ function ProductPage() {
 
         </div>
     )
-}
+})
 
 export default ProductPage
