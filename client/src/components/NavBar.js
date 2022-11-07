@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import logo from '../img/logo.svg';
 import { observer } from 'mobx-react-lite';
-import Catalog from "./Catalog";
 import {Context} from "../index"
 import nameStore from '../img/nameStore.svg';
 import { SHOP_ROUTE, ADMIN_ROUTE, LOGIN_ROUTE } from '../utils/consts';
@@ -23,7 +22,6 @@ const NavBar = observer(() => {
           <div className='navbar-logo'><img src={logo} alt="logo"></img></div>
         </div>
 
-        <Catalog></Catalog>
         {user.isAuth ? 
             <div className='menu'>
               <button className='menu-admin' onClick={() => history(ADMIN_ROUTE)}>Админ панель</button>

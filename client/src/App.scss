@@ -83,6 +83,13 @@ section{
     }
     
 }
+
+/*-----------------------------------------------------------------------------------
+                                    PRODUCT ITEM COMPONENT
+-------------------------------------------------------------------------------------*/
+.card-product__img{
+    height: 10em;
+}
 /*------------------------------------------------------------------------
                             Main page
 -------------------------------------------------------------------------*/
@@ -352,13 +359,82 @@ section{
     
 }
 
-
-
-.types-product{
+/*------------------------------------------------------------------------------------------------------------
+                                    PRODUCT CATALOG PAGE
+-------------------------------------------------------------------------------------------------------------*/
+.list-product{
     .wrapper{
-        h1{
-            font-size: 64px;
+        .list-product__title{
+            padding-top: 4.2em;
+            padding-bottom: 4em;
+            h2{font-size: 48px;}
+        }
+    }
+    padding-bottom: 2.5em;
+}
+
+
+/*------------------------------------------------------------------------------------------------------------
+                                    PRODUCT ID PAGE
+-------------------------------------------------------------------------------------------------------------*/
+.product_id{
+    .wrapper{
+        .product_id__title{
+            padding-top: 4.2em;
+            padding-bottom: 3.8em;
+        }
+        .product_id__img{
+            width: 25em;
+            img
+            {height: 25em;}
+        }
+        .product_id__info{
+            .price-line{
+                padding-bottom: 2.5em;
+            }
+           .button-basket{
+            padding-bottom: 5em;
+                button{
+                    display: flex;
+                    justify-content: flex-start;
+                    padding-top: 0.9em;
+                    padding-bottom: 1em;
+                    border: 1px solid #FF6633;
+                    background: #FF6633;
+                    border-radius: 4px;
+                    gap: 8px;
+                    img{
+                        margin-left: 1em;
+                        width: 32px;
+                        height: 32px;
+                    }
+                    span{
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding-top: 0.05em;
+                        color: #FFFFFF;
+                        font-size: 24px;
+                    }
+                    
+                }
+           }
+           .desription{
+            .info{
+                .info_title{
+                    padding: 0.4em 0.5em;
+                    flex-basis: 50%;
+                }
+                .info_description{
+                    padding: 0.4em 0.5em;
+                    font-weight: 700;
+                }
+            }
+           }
+           
         }
         
     }
+    padding-bottom: 2.5em;
 }

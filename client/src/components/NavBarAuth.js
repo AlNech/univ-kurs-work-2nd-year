@@ -5,7 +5,8 @@ import nameStore from '../img/nameStore.svg';
 import { SHOP_ROUTE, ADMIN_ROUTE, LOGIN_ROUTE} from '../utils/consts';
 import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router-dom';
-import Catalog from '../components/Catalog';
+
+
  const NavBarAuth = observer(() => {
   const {user} = useContext(Context);
   const history = useNavigate();
@@ -22,7 +23,7 @@ import Catalog from '../components/Catalog';
           <div className='navbar-nameStore'><img src={nameStore} alt="logo"></img></div>
         </div>
 
-        <Catalog></Catalog>
+        
         {user.isAuth ? 
             <div className='menu'>
               <button className='menu-admin' onClick={() => history(ADMIN_ROUTE)}>Админ панель</button>

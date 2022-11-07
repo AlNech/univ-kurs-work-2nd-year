@@ -5,15 +5,14 @@ import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';
 import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
 import {Context} from "../../index";
 import {createProduct, fetchBrands, fetchProduct, fetchTypes} from "../../http/productApi";
+import {observer} from 'mobx-react-lite';
 
-
-function CreateProduct({show, onHide}) {
+const CreateProduct = observer(({show, onHide}) => {
   const {product} = useContext(Context);
   const [name, setName] = useState('')
   const [price, setPrice] = useState(0)
   const [file, setFile] = useState(null)
   const [info, setInfo] = useState([]);
-
 
   useEffect(() => {
       fetchTypes().then(data => product.setTypes(data))
@@ -130,5 +129,5 @@ console.log(product.selectedType.name )
       </Modal>
   )
 }
-
+)
 export default CreateProduct

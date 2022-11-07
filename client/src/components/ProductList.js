@@ -12,7 +12,7 @@ const ProductList = observer(
        
     
         return (
-            <div className="d-flex flex-row justify-content-between">
+            <div className="d-flex flex-row justify-content-between flex-wrap">
                 {product.products.map(product => {
                     return <ProductItem key = {product.id} product={ product }/>
                 })}
