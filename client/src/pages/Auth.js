@@ -38,18 +38,18 @@ const Auth = observer(() => {
       <NavBarAuth></NavBarAuth>
 
       <Container>
-        <h2>{isLogin ? 'Вход' : 'Регистрация'}</h2>
-        <Row>
+        <h2 style={{marginBottom: '40px'}}>{isLogin ? 'Вход' : 'Регистрация'}</h2>
+        <Row className='col-md-5'>
           <Card>
-            <Form>
+            <Form className="my-md-5">
             <Form.Control
-                        className="mt-3"
+                        className="col-md-3 my-md-1"
                         placeholder="Введите ваш email..."
                         value={email}
                         onChange={e => setEmail(e.target.value)}
             />
             <Form.Control
-                        className="mt-3"
+                        className="col-md-3 my-md-3"
                         placeholder="Введите ваш пароль..."
                         value={password}
                         onChange={e => setPassword(e.target.value)}
@@ -57,18 +57,18 @@ const Auth = observer(() => {
                     />
 
 
-              <Row className="d-flex">
-                <Button variant={"outline-success"} onClick={click}>
+              <Row className="d-flex my-md-4">
+                <Button variant={"outline-success"} onClick={click} className='col-md-6 offset-3'>
                       {isLogin ? 'Вход' : 'Регистрация'}          
                 </Button>
 
                 {isLogin ? 
-                <div className="d-flex flex-row justify-content-around">
-                  <Col md={2} offset={5}><Nav.Link href={REGISTRATION_ROUTE}>Регистрация</Nav.Link></Col>
-                  <Col md={2} offset={3}><p>Забыли пароль?</p></Col>
+                <div className="d-flex flex-row justify-content-between">
+                  <div><Nav.Link href={REGISTRATION_ROUTE}>Регистрация</Nav.Link></div>
+                  <div className='my-md-2'><p>Забыли пароль?</p></div>
                 </div> : 
                 <div>
-                  <Col mg={2}><Nav.Link href={LOGIN_ROUTE}>Вход</Nav.Link></Col>
+                  <div className='me-md-2' ><Nav.Link href={LOGIN_ROUTE}>Вход</Nav.Link></div>
                 </div>}
 
               </Row>   

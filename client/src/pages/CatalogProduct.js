@@ -7,7 +7,7 @@ import { Context } from '..';
 import { fetchTypes, fetchBrands, fetchProduct} from '../http/productApi';
 import ProductList from '../components/ProductList';
 import Footer from '../components/Footer';
-
+import Pages from '../components/Pages';
 
 const CatalogProduct = observer(() => {
   const {product} = useContext(Context);
@@ -20,6 +20,12 @@ const CatalogProduct = observer(() => {
   })
   }, [])
   
+  useEffect(() => {
+    fetchProduct(product.selectedType.id, product.selectedBrand.id, product.page, 2).then(data => {
+          product.setProduct(data.rows)
+          product.setTotalCount(data.count)
+      })
+  }, [product.page, product.selectedType, product.selectedBrand,])
 
     return (
       <div>
@@ -29,13 +35,13 @@ const CatalogProduct = observer(() => {
           <div className="wrapper">
             <Row>
               <Col md={5} className='list-product__title'>
-                  <h2>Молоко, сыр, яйцо</h2>
+                  <h2>{product.selectedType.name}</h2>
               </Col>
             </Row>
             <Row>
               <Col md={{ span: 9, offset: 3 }}>
                   <ProductList/> 
-                  {/*page brands*/}  
+                  <Pages/> 
               </Col>
             </Row>
             

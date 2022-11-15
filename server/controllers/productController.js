@@ -14,11 +14,11 @@ class ProductController {
 
             if (info) {
                 info = JSON.parse(info);
-                info = forEach(i => {
+                info.forEach(i => {
                     ProductInfo.create({
                         title: i.title,
                         description: i.description,
-                        deviceId: device.id
+                        productId: product.id
                     })
                 })
             }

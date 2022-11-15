@@ -17,21 +17,20 @@ import { useNavigate } from 'react-router-dom';
   }
 
   return (
-    <div className='navbar'>
-        <div to={SHOP_ROUTE}>
+    <div className='navbar d-flex flex-row flex-nowrap'>
+        <div onClick={() => history(SHOP_ROUTE)} className='d-flex flex-row col-md-2'>
+          <div className='navbar-nameStore me-md-2'><img src={nameStore} alt="logo"></img></div>
           <div className='navbar-logo'><img src={logo} alt="logo"></img></div>
-          <div className='navbar-nameStore'><img src={nameStore} alt="logo"></img></div>
         </div>
-
         
         {user.isAuth ? 
-            <div className='menu'>
+            <div className='menu d-flex flex-row '>
               <button className='menu-admin' onClick={() => history(ADMIN_ROUTE)}>Админ панель</button>
               <button className='menu-auth' onClick={() => logOut()}>Выйти</button>
             </div> 
             :
             <div className='menu'>             
-              <button className='menu-auth' onClick={() => {history(LOGIN_ROUTE)}}>Авторизация</button>
+              <button className='menu-auth' onClick={() => {history(LOGIN_ROUTE)}}>Вход/Регистрация</button>
             </div> 
         }  
     </div>

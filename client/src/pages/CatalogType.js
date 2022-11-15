@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext, useNavigate} from 'react'
 import { Row, Col, Image } from 'react-bootstrap'
 import NavBar from '../components/NavBar'
 import { observer } from 'mobx-react-lite'
@@ -16,8 +16,15 @@ import pastry from '../img/types-product/pastry.png';
 import teacoffee from '../img/types-product/tea-coffee.png';
 import iceproduct from '../img/types-product/ice-product.png';
 import healthy from '../img/types-product/healthy.png';
+import { CATALOG_PRODUCT } from '../utils/consts';
+import { Context } from '..';
+
 
 const CatalogType = observer(() => {
+  const {product} = useContext(Context);
+  const history = useNavigate();
+
+
     return (
       <div>
         <NavBar></NavBar>
@@ -27,15 +34,25 @@ const CatalogType = observer(() => {
             <div className="title-page"><h2>Каталог</h2></div>
             <div className='type'>
               <Row className="d-flex flex-row justify-content-between my-md-4">
-                <Col className='type-card col-md-6 me-md-5' >
+                <Col className='type-card col-md-6 me-md-5' 
+                  onClick={() => {  product.setSelectedType(type); history(CATALOG_PRODUCT);}}
+                
+                
+                >
                     <div className='type__title'><h4>Молоко, сыр, яйцо</h4></div>
                     <div className='type__img '><Image src={milk}></Image></div>
                 </Col>
-                <Col className='type-card me-md-5'>
+                <Col className='type-card me-md-5'
+                  onClick={() => {  product.setSelectedType(type); history(CATALOG_PRODUCT);}}
+                
+                >
                     <div className='type__title'><h4>Хлеб</h4></div>
                     <div className='type__img'><Image src={bread}></Image></div>
                 </Col>
-                <Col className='type-card'>
+                <Col className='type-card'
+                      onClick={() => { let type=''; product.setSelectedType(type); history(CATALOG_PRODUCT);}}
+                
+                >
                     <div className='type__title'><h4>Овощи и фрукты</h4></div>
                     <div className='type__img'><Image src={fruitveg}></Image></div>
                 </Col>
