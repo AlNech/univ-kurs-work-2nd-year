@@ -35,7 +35,7 @@ const CatalogType = observer(() => {
             <div className='type'>
               <Row className="d-flex flex-row justify-content-between my-md-4">
                 <Col className='type-card col-md-6 me-md-5' 
-                  onClick={() => {  product.setSelectedType(type); history(CATALOG_PRODUCT);}}
+                  //onClick={() => {  product.setSelectedType(type); history(CATALOG_PRODUCT);}}
                 
                 
                 >
@@ -43,14 +43,14 @@ const CatalogType = observer(() => {
                     <div className='type__img '><Image src={milk}></Image></div>
                 </Col>
                 <Col className='type-card me-md-5'
-                  onClick={() => {  product.setSelectedType(type); history(CATALOG_PRODUCT);}}
+                  //onClick={() => {  product.setSelectedType(type); history(CATALOG_PRODUCT);}}
                 
                 >
                     <div className='type__title'><h4>Хлеб</h4></div>
                     <div className='type__img'><Image src={bread}></Image></div>
                 </Col>
                 <Col className='type-card'
-                      onClick={() => { let type=''; product.setSelectedType(type); history(CATALOG_PRODUCT);}}
+                     // onClick={() => { let type=''; product.setSelectedType(type); history(CATALOG_PRODUCT);}}
                 
                 >
                     <div className='type__title'><h4>Овощи и фрукты</h4></div>
