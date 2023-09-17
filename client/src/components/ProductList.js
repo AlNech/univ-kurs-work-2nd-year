@@ -7,10 +7,6 @@ import ProductItem from './ProductItem';
 const ProductList = observer(
     () => {
         const {product} = useContext(Context);
-        
-        
-       
-    
         return (
             <div className="d-flex flex-row justify-content-between flex-wrap">
                 {product.products.map(product => {
